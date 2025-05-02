@@ -52,21 +52,20 @@
       <div class="container is-max-desktop">
         <div class="columns is-centered">
           <div class="column has-text-centered">
-            <h1 class="title is-1 publication-title">Academic Project Page</h1>
+            <h1 class="title is-1 publication-title">Embodied Reasoning Pretraining Enhances Vision-Language-to-Action Models</h1>
             <div class="is-size-5 publication-authors">
               <!-- Paper authors -->
               <span class="author-block">
-                <a href="FIRST AUTHOR PERSONAL LINK" target="_blank">First Author</a><sup>*</sup>,</span>
+                <a href="FIRST AUTHOR PERSONAL LINK" target="_blank">Beichen Wang</a>,</span>
                 <span class="author-block">
-                  <a href="SECOND AUTHOR PERSONAL LINK" target="_blank">Second Author</a><sup>*</sup>,</span>
+                  <a href="SECOND AUTHOR PERSONAL LINK" target="_blank">Zhenbang Yang</a>,</span>
                   <span class="author-block">
-                    <a href="THIRD AUTHOR PERSONAL LINK" target="_blank">Third Author</a>
+                    <a href="THIRD AUTHOR PERSONAL LINK" target="_blank">Jiayi Feng</a>
                   </span>
                   </div>
 
                   <div class="is-size-5 publication-authors">
-                    <span class="author-block">Institution Name<br>Conferance name and year</span>
-                    <span class="eql-cntrb"><small><br><sup>*</sup>Indicates Equal Contribution</small></span>
+                    <span class="author-block">NYU Courant<br>DDMRL 2025 Spring</span>
                   </div>
 
                   <div class="column has-text-centered">
@@ -148,8 +147,7 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ullamcorper tellus sed ante aliquam tempus. Etiam porttitor urna feugiat nibh elementum, et tempor dolor mattis. Donec accumsan enim augue, a vulputate nisi sodales sit amet. Proin bibendum ex eget mauris cursus euismod nec et nibh. Maecenas ac gravida ante, nec cursus dui. Vivamus purus nibh, placerat ac purus eget, sagittis vestibulum metus. Sed vestibulum bibendum lectus gravida commodo. Pellentesque auctor leo vitae sagittis suscipit.
-          </p>
+            Most state-of-the-art systems like OpenVLA, Octo, and pi0 fine-tune vanilla VLMs, such as LLaVA or PaLI-Gemma, using paired data of a single 2D image and a 3D end-effector position. However, these models often underperform in practice—especially in low-data settings. We believe one reason is that VLMs are fundamentally designed for pixel-level reasoning, not for grounded 3D control. A single 2D image simply lacks the spatial richness to support reliable action generation in 3D space. To address this, we introduce a bridge: before training the model to output 3D actions, we first teach it to reason about 2D trajectories, a step we call embodied reasoning.
         </div>
       </div>
     </div>
@@ -157,6 +155,37 @@
 </section>
 <!-- End paper abstract -->
 
+<!-- 2D trajectory training dataset -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Our training data comes from the DROID dataset. We project the 3D end-effector positions into image space using camera intrinsics and extrinsics. Since the raw trajectories are often noisy due to robot jitter, we apply downsampling to make them more learnable. This pretraining step aligns well with the VLM’s original 2D-focused architecture and gives it a lightweight yet grounded way to develop spatial reasoning before full 3D fine-tuning.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End 2D trajectory training dataset -->
+
+<!-- Evaluation -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            For evaluation, we use the Simpler benchmark based on ManiSkill2. Due to compute limitations, we focused only on pick-and-place tasks with minimal data. After pretraining PaLI-Gemma, we loaded the weights into pi0’s training pipeline. Although our model did not match pi0’s official performance—primarily due to our limited resources—it still outperformed a vanilla baseline without 2D trajectory pretraining. This suggests that even lightweight embodied pretraining can provide meaningful improvements when scaling is limited.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End Evaluation -->
 
 <!-- Image carousel -->
 <section class="hero is-small">
