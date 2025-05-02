@@ -122,23 +122,6 @@
 </section>
 
 
-<!-- Teaser video-->
-<section class="hero teaser">
-  <div class="container is-max-desktop">
-    <div class="hero-body">
-      <video poster="" id="tree" autoplay controls muted loop height="100%">
-        <!-- Your video here -->
-        <source src="static/videos/banner_video.mp4"
-        type="video/mp4">
-      </video>
-      <h2 class="subtitle has-text-centered">
-        Aliquam vitae elit ullamcorper tellus egestas pellentesque. Ut lacus tellus, maximus vel lectus at, placerat pretium mi. Maecenas dignissim tincidunt vestibulum. Sed consequat hendrerit nisl ut maximus. 
-      </h2>
-    </div>
-  </div>
-</section>
-<!-- End teaser video -->
-
 <!-- Paper abstract -->
 <section class="section hero is-light">
   <div class="container is-max-desktop">
@@ -154,6 +137,23 @@
   </div>
 </section>
 <!-- End paper abstract -->
+
+<!-- Teaser video-->
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <video poster="" id="tree" autoplay controls muted loop height="100%">
+        <!-- Your video here -->
+        <source src="static/videos/banner_video.mp4"
+        type="video/mp4">
+      </video>
+      <h2 class="subtitle has-text-centered">
+        Architecture diagram
+      </h2>
+    </div>
+  </div>
+</section>
+<!-- End teaser video -->
 
 <!-- 2D trajectory training dataset -->
 <section class="section hero is-light">
@@ -219,26 +219,41 @@
 </section>
 <!-- End Evaluation -->
 
-<!-- Result Table -->
-<table border="1" style="width:50%; text-align:center;">
-  <tr>
-    <th>Header 1</th>
-    <th>Header 2</th>
-  </tr>
-  <tr>
-    <td>Row 1, Col 1</td>
-    <td>Row 1, Col 2</td>
-  </tr>
-  <tr>
-    <td>Row 2, Col 1</td>
-    <td>Row 2, Col 2</td>
-  </tr>
-  <tr>
-    <td>Row 3, Col 1</td>
-    <td>Row 3, Col 2</td>
-  </tr>
-</table>
-<!-- End Result Table -->
+<!-- Result Table Block -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Result Table</h2>
+        <div class="content has-text-centered">
+          <table class="table is-bordered is-striped is-fullwidth">
+            <thead>
+              <tr>
+                <th>Model</th>
+                <th>Result</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Pi0 Official</td>
+                <td>89.5%</td>
+              </tr>
+              <tr>
+                <td>Vanilla VLA</td>
+                <td>52%</td>
+              </tr>
+              <tr>
+                <td>ER VLA</td>
+                <td>64%</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
   
 <!-- Video carousel -->
 <section class="hero is-small">
